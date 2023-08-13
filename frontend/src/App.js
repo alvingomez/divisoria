@@ -12,7 +12,7 @@ const App = () => {
            >>container, which sets a max-width at each responsive breakpoint
       */}
         <Container>
-          <h1>Welcome to proshop</h1>
+          <h1>Welcome to Divisoria</h1>
         </Container>
       </main>
       <Footer />
