@@ -2,7 +2,7 @@ const products = [
     {
         _id: '1',
         name:'Kali Bracelet',
-        image: '/images/kali_bracelet', 
+        image: '/images/kali_bracelet.webp', 
         description: 'Glass stones. Gold Plated brass.',
         brand: 'Fold Over',
         category: 'bracelet',
@@ -14,7 +14,7 @@ const products = [
     {
         _id: '2',
         name:'Dalilah Hoops ',
-        image: '/images/Dailah_hoops', 
+        image: '/images/Dailah_hoops.webp', 
         description: 'gold plated brass, surgical steel posts.',
         brand: 'Fold Over',
         category: 'earings',
@@ -26,7 +26,7 @@ const products = [
     {
         _id: '3',
         name:'Custom Slider Bracelet',
-        image: '/images/Custom_Slider', 
+        image: '/images/Custom_Slider.webp', 
         description: 'Glass stones, gold plated brass.',
         brand: 'Pull-Tie',
         category: 'bracelet',
@@ -38,7 +38,7 @@ const products = [
     {
         _id: '4',
         name:'Juno Rose Quartz Necklace ',
-        image: '/images/Juno_Rose', 
+        image: '/images/Juno_Rose.webp', 
         description:  'Rose quartz. Gold plated brass.',
         brand: 'Lobster Clasp',
         category: 'necklace',
@@ -47,10 +47,11 @@ const products = [
         rating: 5,
         numReviews: 12,
     },
+
     {
         _id: '5',
         name:'Custom Slider Bracelet',
-        image: '/images/Zodiac_18k', 
+        image: '/images/Zodiac _18K.webp', 
         description: 'Mother of pearl, cubic zirconia stones. 18K gold plated sterling silver.',
         brand: 'Lobster Clasp',
         category: 'bracelet',
@@ -59,6 +60,7 @@ const products = [
         rating: 3.5,
         numReviews: 10,
     },
+
     {
         _id: '6',
         name: 'Miki 18K Gold Earrings',
@@ -71,8 +73,7 @@ const products = [
         countInStock: 0,
         rating: 4,
         numReviews: 12,
-      },
-
-
-    
+      },    
 ]
+
+export default products;
