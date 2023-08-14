@@ -1,6 +1,7 @@
 import { Container } from 'react-bootstrap';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { Outlet } from 'react-router-dom';
 
 const App = () => {
   return (
@@ -12,7 +13,7 @@ const App = () => {
            >>container, which sets a max-width at each responsive breakpoint
       */}
         <Container>
-          <h1>Welcome to Divisoria</h1>
+         <Outlet />
         </Container>
       </main>
       <Footer />
