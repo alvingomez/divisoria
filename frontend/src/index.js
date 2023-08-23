@@ -14,6 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ProductScreen from './screens/ProductScreen';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,7 +25,12 @@ const router = createBrowserRouter(
         <Route 
           index={true} 
           path='/'  
-          element={<HomeScreen/> }/>
+          element={<HomeScreen/> }
+        />
+        <Route 
+          path='/product/:id'
+          element={<ProductScreen />}
+        />
     
     </Route>
   )
