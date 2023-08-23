@@ -1,5 +1,6 @@
 import { Card } from "react-bootstrap";
 import {Link} from 'react-router-dom';
+import Rating from './Rating';
 
 function Products({product}) {
     
@@ -20,6 +21,11 @@ function Products({product}) {
         ${product.price}    
      </Card.Text>   
     
+     <Card.Text as="div">
+        <Rating values={product.rating} reviews={product.numReviews}  />
+     </Card.Text>
+
+
     </Card.Body>
 
     </Card>
