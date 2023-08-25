@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import products from '../products';
+import products from '../../../backend/data/products';
 import Product from '../components/Products';
 
 const HomeScreen = () => {

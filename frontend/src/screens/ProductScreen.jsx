@@ -8,7 +8,7 @@ import {
   Button,  
 } from 'react-bootstrap';
 import Rating from '../components/Rating';
-import products from '../products';
+import products from '../../../backend/data/products';
 
 const ProductScreen = () => {
   // renaming id
