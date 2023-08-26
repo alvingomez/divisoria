@@ -1,3 +1,4 @@
+import {useState, useEffect} from 'react';
 import { useParams, Link } from 'react-router-dom';
 import {
   Row,
@@ -8,14 +9,43 @@ import {
   Button,  
 } from 'react-bootstrap';
 import Rating from '../components/Rating';
-import products from '../../../backend/data/products';
+import axios from 'axios';
+
 
 const ProductScreen = () => {
-  // renaming id
-  const {id:productId} = useParams();
-  const product = products.find((product) =>  productId === product._id)
-  console.log(product.rating)
+  const [product, setProduct] = useState([]);
 
+  // renaming id
+  const {id:productId} = useParams();  
+   
+  useEffect(() => {
+    const fetchProduct = async() => {
+      const {data} = await axios.get(`/api/products/${productId}`)
+      .catch(function (error) {
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          // The request was made but no response was received
+          // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+          // http.ClientRequest in node.js
+          console.log(error.request);
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.log('Error', error.message);
+        }
+        console.log(error.config);
+      });
+      setProduct(data);
+    } 
+    fetchProduct();
+    //If the prodcutID changes we want the useEffect to run 
+  }, [productId])
+
+  console.log(product);
   return (
     <>    
         <Link className="btn btn-light my-3" to='/'>
