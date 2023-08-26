@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/products', (req, res) => {
-    res.json(products)
+    res.json(products);
 })
 
 app.get('/api/products/:id', (req, res) => {
