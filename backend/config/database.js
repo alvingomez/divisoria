@@ -1,0 +1,15 @@
+// CREATE A CONNECTION TO MONGODB USING MONGOOSE.
+
+import mongoose from 'mongoose';
+
+const connectDB = async () => {
+  try {
+    const connect = await mongoose.connect(process.env.MONGO_URI);
+    console.log(`MONGODB CONNECTED ${connect.connection.host}`);
+  } catch (error) {
+    console.log(`Error:${error.message}`);
+    process.exit(1);
+  }
+};
+
+export default connectDB;
