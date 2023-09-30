@@ -96,7 +96,10 @@ const orderSchema = new Schema({
     },{timestamps: true});
 
 
+    const Order = moongoose.model('Order', orderSchema);
 
+    export default Order; 
+    
 
 
 
