@@ -1,6 +1,6 @@
 const products = [
     {
-        _id: '1',
+        
         name:'Kali Bracelet',
         image: '/images/kali_bracelet.webp', 
         description: 'Glass stones. Gold Plated brass.',
@@ -12,7 +12,7 @@ const products = [
         numReviews: 12,
     },
     {
-        _id: '2',
+       
         name:'Dalilah Hoops ',
         image: '/images/Dailah_hoops.webp', 
         description: 'gold plated brass, surgical steel posts.',
@@ -24,7 +24,7 @@ const products = [
         numReviews: 8,
     },
     {
-        _id: '3',
+        
         name:'Custom Slider Bracelet',
         image: '/images/Custom_Slider.webp', 
         description: 'Glass stones, gold plated brass.',
@@ -36,7 +36,7 @@ const products = [
         numReviews: 12,
     },
     {
-        _id: '4',
+        
         name:'Juno Rose Quartz Necklace ',
         image: '/images/Juno_Rose.webp', 
         description:  'Rose quartz. Gold plated brass.',
@@ -49,7 +49,7 @@ const products = [
     },
 
     {
-        _id: '5',
+        
         name:'Custom Slider Bracelet',
         image: '/images/Zodiac _18K.webp', 
         description: 'Mother of pearl, cubic zirconia stones. 18K gold plated sterling silver.',
@@ -62,7 +62,7 @@ const products = [
     },
 
     {
-        _id: '6',
+        
         name: 'Miki 18K Gold Earrings',
         image: '/images/Miki.webp',
         description:
