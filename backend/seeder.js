@@ -42,8 +42,23 @@ const importDataToMongoDB = async () => {
     // CREATE ADMIN USER
     const adminUser = createdUsers[0].id;
 
-  }catch{
+    //PRODUCTS
+    const sampleProducts =  products.map((product) => {
+      return {
+        ...product, 
+        user:adminUser
+      };
+    });
 
+    // INSERT PRODUCTS
+    await Product.insertMany(sampleProducts);
+
+    console.log('Data Imported'.green.inverse);
+    process.exit();
+
+  }catch(error){
+    console.error(`${error}`.red.inverse);
+    process.exit(1);
   }
 
     
