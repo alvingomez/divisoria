@@ -5,7 +5,7 @@ const {Schema} = mongoose;
 const orderSchema = new Schema({
     // USER
     user:{
-        type:string,
+        type:String,
         required:true,
         ref:'User',
     },
@@ -96,7 +96,7 @@ const orderSchema = new Schema({
     },{timestamps: true});
 
 
-    const Order = moongoose.model('Order', orderSchema);
+    const Order = mongoose.model('Order', orderSchema);
 
     export default Order; 
     
