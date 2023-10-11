@@ -8,7 +8,7 @@ const userSchema = {
         required:true,
     },
     email:{
-        type:string,
+        type:String,
         required:true,
     },
     password:{
