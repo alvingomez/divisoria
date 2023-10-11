@@ -10,7 +10,6 @@ import User from './models/userDBModel.js';
 
 import connectToDatabase from './config/database.js';
 
-
 dotenv.config();
 
 connectToDatabase();
@@ -51,7 +50,7 @@ const importDataToMongoDB = async () => {
     });
 
     // INSERT PRODUCTS
-    await Product.insertMany(sampleProducts);
+    await Products.insertMany(sampleProducts);
 
     console.log('Data Imported'.green.inverse);
     process.exit();
