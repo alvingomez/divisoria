@@ -42,11 +42,45 @@ const importDataToMongoDB = async () => {
     // CREATE ADMIN USER
     const adminUser = createdUsers[0].id;
 
-  }catch{
+    //PRODUCTS
+    const sampleProducts =  products.map((product) => {
+      return {
+        ...product, 
+        user:adminUser
+      };
+    });
 
+    // INSERT PRODUCTS
+    await Product.insertMany(sampleProducts);
+
+    console.log('Data Imported'.green.inverse);
+    process.exit();
+
+  }catch(error){
+    console.error(`${error}`.red.inverse);
+    process.exit(1);
+  } 
+}
+
+ //CLEARING DATA
+ const eraseEntireData = async () => {
+  try{
+    await Order.deleteMany();
+    await Products.deleteMany();
+    await User.deleteMany();
+
+    console.log('Data Erased!'.red.inverse);
+    process.exit();
   }
+  catch(error){
+    console.log(`${error}`.red.inverse);
+    process.exit(1);
+  }
+}    
 
-    
-
-    
+if(process.argv[2] === '-d'){
+  eraseEntireData();
+}
+else{
+  importDataToMongoDB();
 }
