@@ -59,9 +59,28 @@ const importDataToMongoDB = async () => {
   }catch(error){
     console.error(`${error}`.red.inverse);
     process.exit(1);
+  } 
+}
+
+ //CLEARING DATA
+ const eraseEntireData = async () => {
+  try{
+    await Order.deleteMany();
+    await Products.deleteMany();
+    await User.deleteMany();
+
+    console.log('Data Erased!'.red.inverse);
+    process.exit();
   }
+  catch(error){
+    console.log(`${error}`.red.inverse);
+    process.exit(1);
+  }
+}    
 
-    
-
-    
+if(process.argv[2] === '-d'){
+  eraseEntireData();
+}
+else{
+  importDataToMongoDB();
 }
