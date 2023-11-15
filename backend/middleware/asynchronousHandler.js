@@ -9,3 +9,5 @@ function asynchronousHandler(fn){
         }
     )
 }
+
+export default asynchronousHandler;
