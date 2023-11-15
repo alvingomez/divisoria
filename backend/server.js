@@ -21,11 +21,11 @@ app.get('/api/products', (req, res) => {
     res.json(products);
 })
 
-app.get('/api/products/:id', (req, res) => {
-    console.log(req.params)
-    const findProduct = products.find((product) => product._id === req.params.id );
-    res.json(findProduct);
-})
+// app.get('/api/products/:id', (req, res) => {
+//     console.log(req.params)
+//     const findProduct = products.find((product) => product._id === req.params.id );
+//     res.json(findProduct);
+// })
 
 
 app.listen(port, () => console.log(`Server is listening on port ${port}`));
