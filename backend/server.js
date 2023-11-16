@@ -5,7 +5,7 @@ dotenv.config();
 
 import dbConnection from './config/database.js'
 
-import products from './data/products.js';
+import productRoutes from './routes/productRoute.js'
 
 const app = express();
 
@@ -17,9 +17,12 @@ app.get('/', (req, res) => {
     res.send('<h1>This is a test broadcast</h1>')
 })
 
-app.get('/api/products', (req, res) => {
-    res.json(products);
-})
+// app.get('/api/products', (req, res) => {
+//     res.json(products);
+// })
+
+// PRODUCT ROTE
+app.use('/api/products', productRoutes);
 
 // app.get('/api/products/:id', (req, res) => {
 //     console.log(req.params)
