@@ -7,6 +7,8 @@ import dbConnection from './config/database.js'
 
 import productRoutes from './routes/productRoute.js'
 
+import {notFound, errorHandler} from './middleware/middlewareError.js'
+
 const app = express();
 
 dbConnection();
@@ -24,11 +26,7 @@ app.get('/', (req, res) => {
 // PRODUCT ROTE
 app.use('/api/products', productRoutes);
 
-// app.get('/api/products/:id', (req, res) => {
-//     console.log(req.params)
-//     const findProduct = products.find((product) => product._id === req.params.id );
-//     res.json(findProduct);
-// })
-
+app.use(notFound);
+app.use(errorHandler);
 
 app.listen(port, () => console.log(`Server is listening on port ${port}`));
