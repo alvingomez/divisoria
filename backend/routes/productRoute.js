@@ -12,7 +12,7 @@ router.get('/', asyncHandler(async (req, res) => {
 
 router.get('/:id', asyncHandler(async (req, res) => {
     //FETCHING A SINGLE PRODUCT
-    const product = await Product.findById(req.param.id)  //This is from the Model API
+    const product = await Product.findById(req.params.id);  //This is from the Model API
 
     // ERROR CATCHER IF PAGE IS NOT AVAILABLE
     if(product){
