@@ -5,7 +5,9 @@ dotenv.config();
 
 import dbConnection from './config/database.js'
 
-import products from './data/products.js';
+import productRoutes from './routes/productRoute.js'
+
+import {notFound, errorHandler} from './middleware/middlewareError.js'
 
 const app = express();
 
@@ -17,15 +19,14 @@ app.get('/', (req, res) => {
     res.send('<h1>This is a test broadcast</h1>')
 })
 
-app.get('/api/products', (req, res) => {
-    res.json(products);
-})
-
-// app.get('/api/products/:id', (req, res) => {
-//     console.log(req.params)
-//     const findProduct = products.find((product) => product._id === req.params.id );
-//     res.json(findProduct);
+// app.get('/api/products', (req, res) => {
+//     res.json(products);
 // })
 
+// PRODUCT ROTE
+app.use('/api/products', productRoutes);
+
+app.use(notFound);
+app.use(errorHandler);
 
 app.listen(port, () => console.log(`Server is listening on port ${port}`));
