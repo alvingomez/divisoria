@@ -4,7 +4,7 @@ import {apiSlice} from '../slices/apiSlice';
 const productsApiSlice = apiSlice.injectEndpoints({
     endpoints: (build) => ({
         // created endpoint for HomeScreen
-        getProducts = build.query({
+        getProducts: build.query({
             query: () => ({url:PRODUCTS_URL,}),
             keepUnusedDataFor:5,
         })
