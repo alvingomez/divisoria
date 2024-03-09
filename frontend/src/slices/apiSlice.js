@@ -6,7 +6,7 @@ const baseQuery = fetchBaseQuery({baseurl:PRODUCTS_URL})
 export const productsApiSlice = createApi({
     baseQuery,
     tagTypes:['Product', 'Order', 'Paypal'],
-    endpoints: (build) => { },
+    endpoints: (build) => ({}),
     keepUnusedDataFor:5,
 })
 
