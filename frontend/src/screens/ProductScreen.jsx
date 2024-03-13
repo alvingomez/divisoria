@@ -43,9 +43,7 @@ const ProductScreen = () => {
     } 
     fetchProduct();
     //If the prodcutID changes we want the useEffect to run 
-  }, [productId])
-
-  console.log(product);
+  }, [productId])  
   return (
     <>    
         <Link className="btn btn-light my-3" to='/'>
