@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
 import Loader from '../components/Loader';
+import Message from '../components/Message';
 import Rating from '../components/Rating';
 // import axios from 'axios';
 import { useGetProductQuery } from '../slices/productApiSlice';
@@ -16,7 +17,7 @@ const ProductScreen = () => {
       {isLoading ? (
        <Loader /> 
       ) : error ? (
-        error.data.message
+        <Message variant='danger'>{error?.data?.message || error.error}</Message >
       ) : (
         <>
           <Link className="btn btn-light my-3" to="/">
