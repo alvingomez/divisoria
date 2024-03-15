@@ -1,5 +1,5 @@
 import {configureStore} from '@reduxjs/toolkit';
-import {apiSlice} from './apiSlice';
+import {apiSlice} from './slices/apiSlice';
 
 export const store = configureStore({    
     reducer:{
@@ -8,7 +8,8 @@ export const store = configureStore({
          * within the store. */
         [apiSlice.reducerPath]:apiSlice.reducer,
     },
-    middleware:(getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware)
+    middleware:(getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware),
+    devTools:true,
 })
 
 
