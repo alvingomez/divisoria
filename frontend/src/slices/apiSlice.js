@@ -10,7 +10,7 @@ export const apiSlice = createApi({
     keepUnusedDataFor:5,
 })
 
-
+// https://redux-toolkit.js.org/rtk-query/api/created-api/redux-integration
 
 
 
